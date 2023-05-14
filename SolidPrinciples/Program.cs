@@ -1,8 +1,8 @@
 ﻿/*// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 */
-using SolidPrinciples.Bad;
-using SolidPrinciples.Good;
+using SolidPrinciples.SingleResponsibility.Bad;
+using SolidPrinciples.SingleResponsibility.Good;
 
 namespace SolidPrinciples
 {    
@@ -10,7 +10,8 @@ namespace SolidPrinciples
     {
         static void Main(string[] args)
         {
-            SingleResponsibilityGood.Demo();
+            // SingleResponsibilityBad.Demo();
+            // SingleResponsibilityGood.Demo();
         }
     }
 }

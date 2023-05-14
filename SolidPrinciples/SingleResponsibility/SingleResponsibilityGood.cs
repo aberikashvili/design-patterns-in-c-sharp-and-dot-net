@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
 
-namespace SolidPrinciples.Bad
+namespace SolidPrinciples.SingleResponsibility.Good
 {
-    /**
-     * Violating Single Responsibility Principle
-     * Because we are adding too much responsibilities to Journal class
-     * Not only keeping entries
-     * BUT
-     * Also managing persistence
-     */
     internal class Journal
     {
         private readonly List<string> entries = new List<string>();
@@ -35,24 +29,24 @@ namespace SolidPrinciples.Bad
         {
             return string.Join(Environment.NewLine, entries);
         }
+    }
 
-        public void Save(string filename)
+    /**
+     * We did Separation of Concerns
+     * Persistence class is converned with saving whatever object is being fed
+     */
+    internal class Persistence
+    {
+        public void SaveToFile(Journal j, string filename, bool overwrite = false)
         {
-            File.WriteAllText(ToString(), filename);
-        }
-
-        public static Journal Load(string filename)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Load(Uri uri)
-        {
-
+            if (overwrite || !File.Exists(filename))
+            {
+                File.WriteAllText(filename, j.ToString());
+            }
         }
     }
 
-    internal class SingleResponsibilityBad
+    internal class SingleResponsibilityGood
     {
         public static void Demo()
         {
@@ -61,6 +55,12 @@ namespace SolidPrinciples.Bad
             j.AddEntry("World");
 
             WriteLine(j);
+
+            var p = new Persistence();
+            var filename = Path.Combine(Environment.CurrentDirectory, "journal.txt");
+            p.SaveToFile(j, filename, true);
+
+            Process.Start(filename); // throws error
         }
     }
 }
