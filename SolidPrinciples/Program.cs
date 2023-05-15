@@ -1,4 +1,6 @@
-﻿using SolidPrinciples.OpenClose.Bad;
+﻿using LiskovBad = SolidPrinciples.LiskovSubstitution.Bad.LiskovSubstitution;
+using LiskovGood = SolidPrinciples.LiskovSubstitution.Good.LiskovSubstitution;
+using SolidPrinciples.OpenClose.Bad;
 using SolidPrinciples.OpenClose.Good;
 using SolidPrinciples.SingleResponsibility.Bad;
 using SolidPrinciples.SingleResponsibility.Good;
@@ -12,8 +14,11 @@ namespace SolidPrinciples
             // SingleResponsibilityBad.Demo();
             // SingleResponsibilityGood.Demo();
 
-            OpenCloseBad.Demo();
-            OpenCloseGood.Demo();
+            // OpenCloseBad.Demo();
+            // OpenCloseGood.Demo();
+
+            // LiskovBad.Demo();
+            LiskovGood.Demo();
         }
     }
 }

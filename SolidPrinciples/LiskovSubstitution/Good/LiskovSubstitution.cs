@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SolidPrinciples.LiskovSubstitution.Bad
+namespace SolidPrinciples.LiskovSubstitution.Good
 {
     internal class Rectangle
     {
-        public int Width { get; set; }
+        public virtual int Width { get; set; }
 
-        public int Height { get; set; }
+        public virtual int Height { get; set; }
 
         public Rectangle()
         {
@@ -31,7 +31,7 @@ namespace SolidPrinciples.LiskovSubstitution.Bad
 
     internal class Square : Rectangle
     {
-        public new int Width
+        public override int Width
         {
             set
             {
@@ -39,7 +39,7 @@ namespace SolidPrinciples.LiskovSubstitution.Bad
             }
         }
 
-        public new int Heighth
+        public override int Height
         {
             set
             {
