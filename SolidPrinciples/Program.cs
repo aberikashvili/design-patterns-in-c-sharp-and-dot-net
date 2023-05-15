@@ -1,6 +1,5 @@
-﻿/*// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-*/
+﻿using SolidPrinciples.OpenClose.Bad;
+using SolidPrinciples.OpenClose.Good;
 using SolidPrinciples.SingleResponsibility.Bad;
 using SolidPrinciples.SingleResponsibility.Good;
 
@@ -12,6 +11,9 @@ namespace SolidPrinciples
         {
             // SingleResponsibilityBad.Demo();
             // SingleResponsibilityGood.Demo();
+
+            OpenCloseBad.Demo();
+            OpenCloseGood.Demo();
         }
     }
 }
