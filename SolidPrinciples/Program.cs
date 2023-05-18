@@ -1,5 +1,7 @@
 ﻿using LiskovBad = SolidPrinciples.LiskovSubstitution.Bad.LiskovSubstitution;
 using LiskovGood = SolidPrinciples.LiskovSubstitution.Good.LiskovSubstitution;
+using SegregationBad = SolidPrinciples.InterfaceSegregation.Bad.InterfaceSegregation;
+using SegregationGood = SolidPrinciples.InterfaceSegregation.Good.InterfaceSegregation;
 using SolidPrinciples.OpenClose.Bad;
 using SolidPrinciples.OpenClose.Good;
 using SolidPrinciples.SingleResponsibility.Bad;
@@ -18,7 +20,10 @@ namespace SolidPrinciples
             // OpenCloseGood.Demo();
 
             // LiskovBad.Demo();
-            LiskovGood.Demo();
+            // LiskovGood.Demo();
+
+            // SegregationBad.Demo();
+            // SegregationGood.Demo();
         }
     }
 }
